@@ -1,0 +1,8 @@
+<h1>Update <!--{{object.title}}--></h1>
+{{form.instance.title}}
+<form method="post" action=".">{%csrf_token%}
+{{form.as_p}}
+    <input type="submit" value="Update">
+</form>
+
+<a href="/blog/list">List</a>

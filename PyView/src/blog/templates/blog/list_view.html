@@ -1,0 +1,32 @@
+<h1>Amit Sachdeva</h1>
+<h2>list_view.html</h2>
+{% if messages %}
+<ul class="messages">
+    {% for message in messages %}
+    <li {% if message.tags %} class="{{ message.tags }}"{% endif %}> {{ message }}</li>
+    {% endfor %}
+</ul>
+{% endif %}
+{{object_list}}
+
+{% include "blog/search_view.html" %}
+{% for object in object_list %}
+
+
+
+<li>
+    <a href ="/blog/detail/{{object.id}}">{{object.title}}</a>
+    <!--<a href ='{% url "blog:detail" id = object.id}'>{{object.title}}</a>-->
+    <!--<a href ='{% url "namespace written in djviews url.py:name written in blog url.py in detail view url" id = object.id}'>{{object.title}}</a>-->
+    <!--<a href ='{{object.get_absolute_url}}'>{{object.title}}</a>-->
+</li>
+
+{% endfor %}
+
+<h1>{{normal_data}}</h1>
+
+<h1>{{normal_array}}</h1>
+
+<h1>{{num}}</h1>
+
+<h1>{{boolean_value}}</h1>
